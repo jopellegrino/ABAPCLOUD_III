@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_13_TEXTO_01</CLSNAME>
+    <CLSNAME>ZCL_LAB_05_INVOICE_JOH</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Operaciones con cadenas de textos</DESCRIPT>
+    <DESCRIPT>Lab. func. condensacion, concatenacion, swift, etc. de texto</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
