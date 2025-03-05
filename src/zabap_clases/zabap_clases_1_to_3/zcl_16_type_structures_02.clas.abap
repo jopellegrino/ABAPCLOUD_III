@@ -1,4 +1,4 @@
-CLASS zcl_18_type_structures_02 DEFINITION
+CLASS zcl_16_type_structures_02 DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_18_type_structures_02 IMPLEMENTATION.
+CLASS zcl_16_type_structures_02 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

@@ -1,4 +1,4 @@
-CLASS zcl_15_texto_05 DEFINITION
+CLASS zcl_13_texto_05 DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_15_texto_05 IMPLEMENTATION.
+CLASS zcl_13_texto_05 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

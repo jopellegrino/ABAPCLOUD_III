@@ -1,4 +1,4 @@
-CLASS zcl_16_ctrl_struc DEFINITION
+CLASS zcl_14_ctrl_struc DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_16_ctrl_struc IMPLEMENTATION.
+CLASS zcl_14_ctrl_struc IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

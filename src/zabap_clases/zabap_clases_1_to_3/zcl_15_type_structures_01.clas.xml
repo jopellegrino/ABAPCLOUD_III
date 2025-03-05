@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_15_TEXTO_02</CLSNAME>
+    <CLSNAME>ZCL_15_TYPE_STRUCTURES_01</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Oper. cadena de texto</DESCRIPT>
+    <DESCRIPT>Tipos Estructurados</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
