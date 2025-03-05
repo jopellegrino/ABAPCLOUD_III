@@ -1,4 +1,4 @@
-CLASS zcl_11_decl_en_linea_y_forzado DEFINITION
+CLASS zcl_10_decl_en_linea_y_forzado DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_11_decl_en_linea_y_forzado IMPLEMENTATION.
+CLASS zcl_10_decl_en_linea_y_forzado IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

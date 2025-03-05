@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_11_DECL_EN_LINEA_Y_FORZADO</CLSNAME>
+    <CLSNAME>ZCL_10_DECL_EN_LINEA_Y_FORZADO</CLSNAME>
     <LANGU>E</LANGU>
     <DESCRIPT>Declaraciones en linea y conversiones de tipo forzado</DESCRIPT>
     <STATE>1</STATE>
