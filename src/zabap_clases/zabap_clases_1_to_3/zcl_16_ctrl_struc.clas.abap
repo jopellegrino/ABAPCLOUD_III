@@ -1,4 +1,4 @@
-CLASS zcl_16_control_struc_a DEFINITION
+CLASS zcl_16_ctrl_struc DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_16_control_struc_a IMPLEMENTATION.
+CLASS zcl_16_ctrl_struc IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -193,6 +193,46 @@ CLASS zcl_16_control_struc_a IMPLEMENTATION.
 
     out->write(  |  | ).
     out->write(  |**LOOP-ENDLOOP**  | ).
+
+    TYPES: BEGIN OF lty_num,        "DECLARACION DE UN TIPO LOCAL CON SOLO UNA COLUMNA "NUM"
+             num TYPE i,
+           END OF lty_num.
+
+    DATA lt_num TYPE TABLE OF lty_num. "DECLARACION DE UNA TABLA INTERNA CON LA ESTRUCTURA DE LTY_NUM
+
+    DATA: lv_sum   TYPE i,
+          lv_total TYPE i.
+
+    lt_num = VALUE #( ( num = 10 )          "DANDO VALOR A LA FILA DE NUM
+                      ( num = 20 )
+                      ( num = 30 ) ).
+    lv_sum = 0.
+    LOOP AT lt_num INTO DATA(ls_num).    "SE COLOCA EL LOOP SOBRE LA TABLA INTERNA LT_NUM Y SE GUARDA CADA ITERACION DENTRO DE LS_NUM (LOCAL STRACTOR NUM)
+
+      lv_sum = lv_sum + ls_num-num.    "LV_SUM = 0 Y LUEGO SE SUMA CON EL VALOR DE LA PRIMERA ITERACION
+
+    ENDLOOP.
+
+    out->write( |El valor de toda la tabla interna-num es: { lv_sum } | ).
+
+
+    """"""""""TRY-ENDTRY""""""""""TRATAMIENTO DE EXCEPCIONES (EVENTOS QUE INTERRUMPEN EL FLUJO DEL PROGRAMA)
+
+    out->write(  |  | ).
+    out->write(  |**TRY-ENDTRYP**  | ).
+    TRY.                                                "SE ENVUELVE TODA LA OPERACION EN TRY-ENDTRY LA QUE PUEDE TENER EL ERROR
+        DATA: lv_num1 TYPE i VALUE 10,
+              lv_num2 TYPE i VALUE 0,
+              lv_res  TYPE f.
+
+        lv_res = lv_num1 / lv_num2.     "ESTO GENERA UN ERROR DE DIV POR CERO
+
+        out->write( |El valor de la division es { lv_Res }  | ).
+
+      CATCH cx_sy_zerodivide INTO DATA(lx_zero_div). "SE CAPTURA LA EXCEPCION DE DIV POR CERO EN LA VARIABLE
+        out->write(  | Error Division por cero se ha detectado | ).
+    ENDTRY.
+
 
 
 
