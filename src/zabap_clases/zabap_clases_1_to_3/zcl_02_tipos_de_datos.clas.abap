@@ -17,7 +17,7 @@ CLASS zcl_02_tipos_de_datos IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
-      DATA: lv_string TYPE string,
+    DATA: lv_string TYPE string,
           lv_int    TYPE i VALUE 20241008,
           lv_date   TYPE d VALUE '20241008'.
 
