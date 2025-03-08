@@ -3,28 +3,14 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_13_TEXTO_01</CLSNAME>
+    <CLSNAME>ZCL_20_ITAB</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Operaciones con cadenas de textos</DESCRIPT>
+    <DESCRIPT>Declaracion de tablas internas</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
     <UNICODE>X</UNICODE>
    </VSEOCLASS>
-   <TPOOL>
-    <item>
-     <ID>I</ID>
-     <KEY>001</KEY>
-     <ENTRY>Welcome Logali</ENTRY>
-     <LENGTH>40</LENGTH>
-    </item>
-    <item>
-     <ID>I</ID>
-     <KEY>MSG</KEY>
-     <ENTRY>This is your first text symbol</ENTRY>
-     <LENGTH>40</LENGTH>
-    </item>
-   </TPOOL>
   </asx:values>
  </asx:abap>
 </abapGit>

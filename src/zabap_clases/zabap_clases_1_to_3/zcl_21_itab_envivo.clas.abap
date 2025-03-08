@@ -1,0 +1,37 @@
+CLASS zcl_21_itab_envivo DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_21_itab_envivo IMPLEMENTATION.
+
+
+  METHOD if_oo_adt_classrun~main.
+
+*   """""""""LLENAR UNA TABLA DE BASE DE DATOS""""""""""
+
+    SELECT FROM /dmo/flight             "SELECCIONO LOS DATOS DE LA TABLA STANDARD
+    FIELDS *                            "TOMO TODOS LOS REGISTROS
+    INTO TABLE @DATA(lt_copy_flight).   "SI HAGO DECL. EN LINEA ASIGNA UNA TAB STANDARD (NO HASH O SORT) Y LE METO TODOS LOS REGISTROS AQUI
+
+    INSERT zc24_dmo_flight FROM TABLE @lt_copy_flight. "LUEGO METODO TODOS LOS REGISTROS OBTENIDOS EN MI TABLA DE BASE DE DATOS COPIA
+
+
+*   """"""""""DECLARACION DE SORT Y HASH
+
+    DATA: lt_flight_sort TYPE SORTED TABLE OF zc24_dmo_flight WITH NON-UNIQUE KEY carrier_id,  "TABLA SORT (PUEDE SER UNICA O NO LA CLAVE)
+          lt_flight_hash TYPE HASHED TABLE OF zc24_dmo_flight WITH UNIQUE KEY carrier_id.      "TABLA HASH (CLAVE UNICA OBLIGADO)
+
+OUT->write( 'End' ).
+
+  ENDMETHOD.
+ENDCLASS.
