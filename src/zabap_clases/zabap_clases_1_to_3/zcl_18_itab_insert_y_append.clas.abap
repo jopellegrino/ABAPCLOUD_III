@@ -1,4 +1,4 @@
-CLASS zcl_20_itab DEFINITION
+CLASS zcl_18_itab_insert_y_append DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_20_itab IMPLEMENTATION.
+CLASS zcl_18_itab_insert_y_append IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -79,7 +79,7 @@ CLASS zcl_20_itab IMPLEMENTATION.
     out->write( | | ).
 
 *    """"""""""INSERTAR REGISTROS""""""""""SE PUEDE ESPECIFICAR EL INDICE, SORT Y HASH SOLO SE PUEDE CON INSERT Y APEND SE AÑADE AL FINAL Y SOLO STANDARD
-
+    "ES RECOMENDABLE SIEMPRE USAR INSERT PARA TODAS LOS TIPOS DE TABLAS
 
     "FORMA ANTIGUA
     ls_employee-id             = 0004.          "SE USA EL TIPO DE DATO STRUCTURA SE LLENA Y LUEGO SE VOLCA DENTRO DE LA TABLA, DEBEN SER COMPATIBLES
@@ -145,11 +145,51 @@ CLASS zcl_20_itab IMPLEMENTATION.
     CLEAR lt_employees3.
     out->write( | | ).
 
+    "TAMBIEN EXISTE APPEND LINES OF..
+
 
     "INSERT (DESDE UN REGISTRO HASTA OTRO REGISTRO)
 
     INSERT LINES OF lt_employees FROM 1 TO 3 INTO TABLE lt_employees3.
     out->write( data = lt_employees3 name = 'INSERT DATOS DE UNA TABLA EN OTRA, DESDE Y HASTA UN REGISTRO ESPECIFICO (EMPLOYEE 3)' ).
+    out->write( | | ).
+
+*    """"""""""APPEND""""""""""(AÑADE AL FINAL)(SOLO TIPO STANDARD)
+
+
+    """"""PRIMERA FORMA (USA LS AUXILIAR Y LUEGO SE VUELCA EN LA LT
+    CLEAR lt_employees.
+    ls_employee-id             = 0010.          "SE USA EL TIPO DE DATO STRUCTURA SE LLENA Y LUEGO SE VOLCA DENTRO DE LA TABLA, DEBEN SER COMPATIBLES
+    ls_employee-currency_code  = 'LBR'.
+    ls_employee-email          = 'petrogomez@gmail.com'.
+    ls_employee-first_name     = 'Petro'.
+    ls_employee-last_name      = 'Gomez'.
+    ls_employee-phone_numer    = 12121212.
+    ls_employee-salary         = '3500.1'.
+
+    APPEND INITIAL LINE TO lt_employees.             "AGREGA LINEA EN BLANCO
+
+    APPEND ls_employee TO lt_employees.              "DE DONDE SALE LA INFO TO A DONDE VOLCAS LA INFO
+    out->write( data = lt_employees name = 'APPEND EN TABLA STANDARD CON LS AUX (EMPLOYEE)' ).
+
+
+
+    """"""SEGUNDA FORMA (USANDO VALUE)
+
+    APPEND VALUE #( id             = 0011
+                    currency_code  = 'RLS'
+                    email          = 'Joao24@gmail.com'
+                    first_name     = 'Joao'
+                    last_name      = 'Gomez'
+                    phone_numer    = 99999999
+                    salary         = '2200.1' ) TO LT_employees.
+
+    out->write( data = lt_employees name = 'APPEND EN TABLA STANDARD CON VALUE (EMPLOYEE)' ).
+
+
+
+
+
 
 
   ENDMETHOD.

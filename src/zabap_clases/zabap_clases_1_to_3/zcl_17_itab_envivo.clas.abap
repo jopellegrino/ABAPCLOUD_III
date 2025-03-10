@@ -1,4 +1,4 @@
-CLASS zcl_21_itab_envivo DEFINITION
+CLASS zcl_17_itab_envivo DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_21_itab_envivo IMPLEMENTATION.
+CLASS zcl_17_itab_envivo IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

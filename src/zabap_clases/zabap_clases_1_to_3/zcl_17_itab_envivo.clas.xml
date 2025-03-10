@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_20_ITAB</CLSNAME>
+    <CLSNAME>ZCL_17_ITAB_ENVIVO</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Declaracion de tablas internas</DESCRIPT>
+    <DESCRIPT>Clase en Vivo 4</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
