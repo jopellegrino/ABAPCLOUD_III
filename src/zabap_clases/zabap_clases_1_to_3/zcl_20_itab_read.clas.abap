@@ -90,6 +90,7 @@ CLASS zcl_20_itab_read IMPLEMENTATION.
     out->write( | | ).
     out->write( | | ).
 
+
 *    """"""""""READ TABLE CON CAMPO PRIMARY KEY
     DATA gt_flight_sort TYPE SORTED TABLE OF /dmo/airport WITH NON-UNIQUE KEY airport_id. "DECLARACION DE TABLA SORT CON CLAVE NO UNICA(SE PUEDE HABER DUPLICADOS EN EL CAMPO KEY)
 
