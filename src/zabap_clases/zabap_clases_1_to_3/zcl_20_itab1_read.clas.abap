@@ -1,4 +1,4 @@
-CLASS zcl_20_itab_read DEFINITION
+CLASS zcl_20_itab1_read DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_20_itab_read IMPLEMENTATION.
+CLASS zcl_20_itab1_read IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

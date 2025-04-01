@@ -1,4 +1,4 @@
-CLASS zcl_18_itab_insert_y_append DEFINITION
+CLASS zcl_18_itab1_insert_y_append DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_18_itab_insert_y_append IMPLEMENTATION.
+CLASS zcl_18_itab1_insert_y_append IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

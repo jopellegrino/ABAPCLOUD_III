@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_19_ITAB_CORRESPONDING</CLSNAME>
+    <CLSNAME>ZCL_22_ITAB2_FOR_SELECT_ETC</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Oper. tablas internas II</DESCRIPT>
+    <DESCRIPT>Operaciones con tablas internas II</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

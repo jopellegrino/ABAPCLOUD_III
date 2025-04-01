@@ -1,4 +1,4 @@
-CLASS zcl_21_itab_chequeo_index_loop DEFINITION
+CLASS zcl_21_itab1_chequeoindex_loop DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_21_itab_chequeo_index_loop IMPLEMENTATION.
+CLASS zcl_21_itab1_chequeoindex_loop IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

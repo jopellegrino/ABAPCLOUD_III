@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_21_ITAB_CHEQUEO_INDEX_LOOP</CLSNAME>
+    <CLSNAME>ZCL_18_ITAB1_INSERT_Y_APPEND</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Chequeo, Indice de un registro y LOOP AT</DESCRIPT>
+    <DESCRIPT>Declaracion de tablas internas</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

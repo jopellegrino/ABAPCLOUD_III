@@ -1,4 +1,4 @@
-CLASS zcl_19_itab_corresponding DEFINITION
+CLASS zcl_19_itab1_corresponding DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_19_itab_corresponding IMPLEMENTATION.
+CLASS zcl_19_itab1_corresponding IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
