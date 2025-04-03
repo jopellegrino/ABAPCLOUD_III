@@ -147,7 +147,7 @@ CLASS zcl_22_itab2_for_select_etc IMPLEMENTATION.
 
 
 
-*   """""""""MODIFY (MODIFICAR REGISTROS SE APLICA SOBRE LA ITAB)(TAMBIEN SE HACE CON READ TABLE Y LOOK AT)
+*   """""""""MODIFY (MODIFICAR REGISTROS SE APLICA SOBRE LA ITAB)(TAMBIEN SE HACE CON READ TABLE Y LOOP AT)
 
     Out->write( data = gt_flight name = 'GT_FLIGHT (ANTES DE MODIFY)' ).
     out->write( | | ).
@@ -171,15 +171,15 @@ CLASS zcl_22_itab2_for_select_etc IMPLEMENTATION.
         MODIFY gt_flight FROM VALUE #(  connection_id = '111'    "CUANDO SOLO QUIERES HACER LAS MODIFICACIONES Y MANTENER TODOS LOS DEMAS CAMPOS ANTERIORES DEL REGISTRO
                                 Carrier_id     = 'XX'
                                 plane_type_id = 'YY'
-                                                    ) TRANSPORTING carrier_id Carrier_id plane_type_id. "SOLO SE AGREGAN LOS QUE QUIERES QUE SE MODIFIQUEN
-
-
+                                                    ) TRANSPORTING connection_id Carrier_id plane_type_id. "SOLO SE AGREGAN LOS QUE QUIERES QUE SE LES APLIQUE EL CAMBIO
 
       ENDIF.
-
     ENDLOOP.
 
     Out->write( data = gt_flight name = 'GT_FLIGHT (DESPUES DE MODIFY)' ).
+
+
+
 
 
 

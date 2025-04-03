@@ -1,4 +1,4 @@
-CLASS zcl_23_itab3_del_cle DEFINITION
+CLASS zcl_23_itab2_del_cle DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_23_itab3_del_cle IMPLEMENTATION.
+CLASS zcl_23_itab2_del_cle IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -126,9 +126,9 @@ CLASS zcl_23_itab3_del_cle IMPLEMENTATION.
     FIELDS *
     INTO TABLE @DATA(lt_airline)
     UP TO 50 ROWS.
-*                                                                                                                          "EL CAMPO CARRIER_ID SEA IGUAL TANTO EN LA ITAB LT_FLIGHT, COMO EN LA STRUC QUE SE ESTA ITERANDO
+    "EL CAMPO CARRIER_ID SEA IGUAL TANTO EN LA ITAB LT_FLIGHT, COMO EN LA STRUC QUE SE ESTA ITERANDO
     LOOP AT lt_flights INTO DATA(ls_flight_let).
-*                                                                                                             "ESTO ME TRAE EL CAMPO TRAVEL_ID DEL REGISTRO EN DONDE AMBAS TABLAS TIENEN EL MISMO CARRIER_ID SI NO COLOCAS -TRAVEL_ID TRAERIA TODO EL REGISTRO
+      "ESTO ME TRAE EL CAMPO TRAVEL_ID DEL REGISTRO EN DONDE AMBAS TABLAS TIENEN EL MISMO CARRIER_ID SI NO COLOCAS -TRAVEL_ID TRAERIA TODO EL REGISTRO
       DATA(lv_flight) = CONV string( LET lv_airline = lt_airline[ carrier_id = ls_flight_let-carrier_id ]-travel_id        "LO QUE VA DESPUES DEL = CORRESPONDE A UN READ TABLE, POR ESO TRAES LA ITAB
                                          lv_carrid = lt_airline[ carrier_id = ls_flight_let-carrier_id ]-carrier_id        "TIENE MILES DE REGISTROS  "DECL UNA VAR DONDE SE GUARDARA TODO Y QUIERO QUE SEA TIPO STRING
 
@@ -141,15 +141,50 @@ CLASS zcl_23_itab3_del_cle IMPLEMENTATION.
       out->write( data = lv_flight ).
 
     ENDLOOP.
+    out->write( | | ).
+    out->write( | | ).
 
 
+*   """"""""""BASE (SE USA DENTRO DE OTRO OPERADOR, PARA TOMAR EN CUENTA LOS REGISTROS YA EXISTENTES DE OTRA ITAB O STRUC.)(EN CORRESPONDING, NEW, VALUE)
 
 
+    out->write( data = lt_flights name = 'INITIAL lt_flights' ). "VALOR INICIAL
+    out->write( | | ).
+
+    DATA lt_seats TYPE TABLE OF /dmo/flight. "( LT_FLIGHT ITAB UNO Y lt_seats ITAB DOS )
+
+    lt_seats = VALUE #( BASE lt_flights                 "ESTO TOMA EN CUENTA LOS REGISTROS COMO BASE DE LA TABLA
+                            ( carrier_id     = 'CO'                                               "ENTRE () PARA NUEVOS REGISTROS, SE AGREGAN ABAJO DE LA BASE
+                              connection_id  = '0001234'                                          "PODRIA METER UN FOR PARA RELLENARLA MAS
+                              flight_date    = cl_abap_context_info=>get_system_date(  )
+                              price          = '2000'
+                              currency_code  = 'COP'
+                              plane_type_id  = 'B213-58'
+                              seats_max      = 120
+                              seats_occupied = 100 ) ).
+
+    out->write( data = lt_seats name = 'AFTER BASE lt_seats' ). "VALOR CON BASE
+    out->write( | | ).
+
+    lt_seats = VALUE #( BASE lt_seats ( LINES OF lt_flights )    "TOMA COMO BASE TODAS LAS LINEAS DE LT_SEATS ANTERIOR Y ADEMAS LAS DE LT_FLIGHT
+                            ( carrier_id     = 'PE'
+                              connection_id  = '0004321'
+                              flight_date    = cl_abap_context_info=>get_system_date(  )
+                              price          = '3000'
+                              currency_code  = 'USD'
+                              plane_type_id  = 'B233-88'
+                              seats_max      = 130
+                              seats_occupied = 110 ) ).
+
+    out->write( data = lt_seats name = 'AFTER BASE (LINES OF) lt_seats' ).
+    out->write( | | ).
 
 
+*   """"""""""USANDO CORRESPONDING
 
+    LT_sEATS = CORRESPONDING #( BASE ( lt_seats ) lt_flights ).      "USANDO BASE CON CONSTRUCTOR CORRESPONDING, LA BASE ES LT_SEATS Y LUEGO IRA LT_FLIGHT
 
-
+    out->write( data = lt_seats name = 'AFTER BASE (CORRESPONDING) lt_seats' ).
 
   ENDMETHOD.
 ENDCLASS.
