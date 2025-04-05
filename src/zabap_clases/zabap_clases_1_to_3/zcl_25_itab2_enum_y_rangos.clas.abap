@@ -40,7 +40,7 @@ CLASS zcl_25_itab2_enum_y_rangos IMPLEMENTATION.
     out->write( | | ).
 
 
-*   """""""""ENUMERACIONES (TIPOS Y CONSTANTES)
+*   """""""""ENUMERACIONES(OBJETOS ENUMERADOS) (TIPOS Y CONSTANTES)
 
     TYPES: BEGIN OF ENUM gty_colors,
              c_white,                   "CONSTANTES DE ENUMERACION
@@ -75,7 +75,7 @@ CLASS zcl_25_itab2_enum_y_rangos IMPLEMENTATION.
     lv_color_02 = ls_type-c_red.
     out->write( lv_color_02 ).
 
-    CASE lv_color_02.
+    CASE lv_color_02.         "EL USO PRINCIPAL ES RESTRINGIR LAS POSIBILIDADES DE UNA VARIABLE, O INTERFACES DE METODOS
       WHEN ls_type-c_white.
         out->write( 'The Color is White' ).
       WHEN ls_type-c_black.

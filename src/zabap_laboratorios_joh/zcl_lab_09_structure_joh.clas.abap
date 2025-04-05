@@ -58,7 +58,7 @@ CLASS zcl_lab_09_structure_joh IMPLEMENTATION.
 
 
     LS_flights = VALUE #( iduser = 'USER007' aircode = 'CO4' flightnum = 411 key = 'RE4' seat = 54 flightdate = '20251010' ).
-    LS_airlines = value #( carrid = '444' connid = '555'  countryfr = 'US'  cityfrom = 'CH'  airpfrom = 'IL'  countryto = 'PT'   ).
+    LS_airlines = VALUE #( carrid = '444' connid = '555'  countryfr = 'US'  cityfrom = 'CH'  airpfrom = 'IL'  countryto = 'PT'   ).
     LS_nested = VALUE #( lty_flights = LS_flights lty_airlines = LS_airlines ).
 
 
