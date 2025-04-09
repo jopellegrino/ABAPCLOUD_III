@@ -136,6 +136,23 @@ CLASS zcl_lab_07_tables_joh2 IMPLEMENTATION.
     out->write( EXPORTING data = mt_spfli name = 'mt_spfli (Modify Departure_time)' ).
     out->write( | | ).
 
+
+    "OTRA FORMA
+
+    LOOP AT mt_spfli INTO ms_spfli.
+      IF ms_spfli-departure_time > '12:00:00'.
+
+        ms_spfli-departure_time = cl_abap_context_info=>get_system_time( ).
+        MODIFY mt_spfli FROM ms_spfli TRANSPORTING departure_time.
+
+      ENDIF.
+    ENDLOOP.
+
+    out->write( EXPORTING data = mt_spfli name = 'mt_spfli (Modify Departure_time)' ).
+    out->write( | | ).
+
+
+
     """""6.ELIMINAR REGISTROS (ELIMINAR REGISTROS DE UNA ITAB, DONDE UN CAMPO = 'FRA'
 
     LOOP AT mt_spfli INTO DATA(ms_spfli_02).
@@ -147,6 +164,12 @@ CLASS zcl_lab_07_tables_joh2 IMPLEMENTATION.
     ENDLOOP.
 
     out->write( EXPORTING data = mt_spfli name = 'mt_spfli (Del. Airport_to_id = FRA)' ).
+    out->write( | | ).
+
+
+    "OTRA FORMA
+    DELETE mt_spfli WHERE airport_to_id = 'FRA'.
+    out->write( EXPORTING data = mt_spfli name = 'mt_spfli (Del. Airport_to_id = FRA (2))' ).
     out->write( | | ).
 
 
@@ -206,8 +229,26 @@ CLASS zcl_lab_07_tables_joh2 IMPLEMENTATION.
     out->write( | | ).
 
 
+    "OTRA FORMA
 
-    """"""INSTRUCCION LET (ALMACENAR EN UNA VAR. LOS VALORES DE `carrier_id DE mt_scarr` Y `price DE mt_flights_type`)
+    SELECT DISTINCT carrier_id, connection_id, seats_occupied AS seats, price AS bookings  "NO TRAE DUPLICADOS
+    FROM /dmo/flight
+    WHERE seats_max = '140'
+    INTO TABLE @lt_seats.
+
+    SELECT carrier_id, connection_id, seats_occupied AS seats, price AS bookings
+    FROM /dmo/flight
+    INTO TABLE @lt_seats_2.
+
+    LOOP AT lt_seats_2 INTO DATA(ls_seats_2).
+      COLLECT ls_seats_2 INTO lt_seats.
+    ENDLOOP.
+
+    out->write( EXPORTING data = lt_seats name = 'lt_seats (COLLECT)' ).
+    out->write( | | ).
+
+
+    """"""9. INSTRUCCION LET (ALMACENAR EN UNA VAR. LOS VALORES DE `carrier_id DE mt_scarr` Y `price DE mt_flights_type`)
 
     SELECT FROM /dmo/flight
     FIELDS *
@@ -227,11 +268,18 @@ CLASS zcl_lab_07_tables_joh2 IMPLEMENTATION.
 
 
 
-    """""""10. INSTRUCION BASE (ASIGNAR LOS VALORES COMO BASE DE mt_flights_type A lt_flights_base)
+    """""""10. INSTRUCION BASE (ASIGNAR LOS VALORES Y COLOCAR COMO BASE DE mt_flights_type A lt_flights_base)
 
     DATA lt_flights_base TYPE STANDARD TABLE OF /dmo/flight.
 
-    lt_flights_base = VALUE #( BASE mt_flights_type ( ) ).
+    lt_flights_base = VALUE #( BASE mt_flights_type ( carrier_id = 'LS'
+                                                      connection_id = '2500'
+                                                      flight_date = cl_abap_context_info=>get_system_date(  )
+                                                      price = '2000'
+                                                      currency_code = 'USD'
+                                                      plane_type_id = 'A380-800'
+                                                      seats_max = 120
+                                                      seats_occupied = 100  ) ).
 
     out->write( EXPORTING data = lt_flights_base name = 'lt_flights_base (BASE)' ).
     out->write( | | ).
@@ -281,6 +329,16 @@ CLASS zcl_lab_07_tables_joh2 IMPLEMENTATION.
 
     DATA lty_groups_key LIKE mt_spfli.
     out->write( | | ).
+
+
+
+    """""""13. FOR GROUPS
+    TYPES lty_group_keys TYPE STANDARD TABLE OF /dmo/connection-carrier_id WITH EMPTY KEY.
+
+    out->write( VALUE lty_group_keys( FOR GROUPS gv_group OF gs_group IN mt_spfli
+                                      GROUP BY gs_group-carrier_id
+                                      ASCENDING
+                                      WITHOUT MEMBERS ( gv_group ) ) ).
 
 
 
