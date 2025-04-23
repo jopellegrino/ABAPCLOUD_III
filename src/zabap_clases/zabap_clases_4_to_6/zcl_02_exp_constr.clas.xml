@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_26_ITAB_PDF</CLSNAME>
+    <CLSNAME>ZCL_02_EXP_CONSTR</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Ejemplos en teoria de tablas internas</DESCRIPT>
+    <DESCRIPT>Expres. Constr. CONV, EXACT, REF, CAST y FILTER</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

@@ -1,14 +1,56 @@
-class ZCL_26_ITAB_PDF definition
-  public
-  final
-  create public .
+CLASS zcl_26_itab_pdf DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
-protected section.
-private section.
+  PUBLIC SECTION.
+
+    INTERFACES if_oo_adt_classrun .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS ZCL_26_ITAB_PDF IMPLEMENTATION.
+CLASS zcl_26_itab_pdf IMPLEMENTATION.
+
+
+  METHOD if_oo_adt_classrun~main.
+
+*  """""DECLARACION DE TABLAS INTERNAS Y SUS KEYS
+
+    "PARA EVITAR DEFAULT KEY
+
+    DATA gt_employees_01 TYPE STANDARD TABLE OF /dmo/flight WITH NON-UNIQUE KEY client carrier_id. "KEY NO UNICA (SIGNIFICA QUE DICHO CAMPO PUEDE HABER DOS REGISTROS CON EL CAMPO IGUAL)
+
+    DATA gt_employees_02 TYPE STANDARD TABLE OF /dmo/flight WITH EMPTY KEY.                        "CUANDO NO REQUIERES UNA KEY (NO FUNCIONA USAR SORT)
+
+
+*   """""INICIALIZACION DE ITAB Y LIMPIEZA
+
+    CLEAR gt_employees_01.   "INICIALIZACION
+
+    CLEAR gt_employees_01[]. "INICIALIZAR EL CUERPO DE LA ITAB CON CABECERA
+
+
+*   """""ASIGNACION Y ORDENACION DE ITAB
+
+    gt_employees_01 = gt_employees_02. "ASIGNA EL CONTENIDO COMPLETO DE LA TABLA 02 A 01, SE SOBRESCRIBE
+
+
+
+*   """""ORDENAR TABLA ALFABETICAMENTE
+
+    SORT gt_employees_01 AS TEXT.
+
+
+*   """"""NEW"""""(3 DE 3)(ISNTANCIA DE CLASE, LE ENVIO UNA INFORACION Y LUEGO ME DEVUELVE ALGO PROCESANDO LA INFO ENVIADA)
+
+    DATA(lv_employee) = NEW zcl_01_exp_constr( iv_age  = 22                  "ESTA VAR. LV_EMPLOYEE SOLO ALMACENA LA REFERENCIA AL NUEVO OBJETO CREADO EN LA CLASE REFERENCIADA
+                                               iv_name = 'Laura'  ).         "SE ENVIA ESTO A LA CLASE, SOBRE ESTA INSTANCIACION
+
+    out->write( lv_employee->lv_age ).                                       "EN LA CLASE REFERENCIADA SE PROCESA TODA LA INFO Y YO DESDE AQUI ACCEDO AL RESULTADO, USANDO LA VAR QUE ALMACENA LA REF Y APUNTANDO A LA VAR
+    out->write( lv_employee->lv_name ).
+
+  ENDMETHOD.
 ENDCLASS.
