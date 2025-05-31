@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_19_itab1_corresponding IMPLEMENTATION.
+CLASS ZCL_19_ITAB1_CORRESPONDING IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

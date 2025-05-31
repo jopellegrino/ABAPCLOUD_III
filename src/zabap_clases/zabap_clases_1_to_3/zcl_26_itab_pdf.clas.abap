@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_26_itab_pdf IMPLEMENTATION.
+CLASS ZCL_26_ITAB_PDF IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

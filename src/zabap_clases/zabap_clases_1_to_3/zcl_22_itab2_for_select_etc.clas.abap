@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_22_itab2_for_select_etc IMPLEMENTATION.
+CLASS ZCL_22_ITAB2_FOR_SELECT_ETC IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

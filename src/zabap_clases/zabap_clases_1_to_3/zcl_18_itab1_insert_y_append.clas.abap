@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_18_itab1_insert_y_append IMPLEMENTATION.
+CLASS ZCL_18_ITAB1_INSERT_Y_APPEND IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

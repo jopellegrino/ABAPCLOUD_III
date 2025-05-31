@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_09_truncamiento_y_redondeo IMPLEMENTATION.
+CLASS ZCL_09_TRUNCAMIENTO_Y_REDONDEO IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

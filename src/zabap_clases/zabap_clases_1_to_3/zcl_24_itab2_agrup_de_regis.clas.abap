@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_24_itab2_agrup_de_regis IMPLEMENTATION.
+CLASS ZCL_24_ITAB2_AGRUP_DE_REGIS IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

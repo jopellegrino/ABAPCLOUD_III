@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_25_itab2_enum_y_rangos IMPLEMENTATION.
+CLASS ZCL_25_ITAB2_ENUM_Y_RANGOS IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

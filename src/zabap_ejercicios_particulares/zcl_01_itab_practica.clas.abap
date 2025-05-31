@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_01_itab_practica IMPLEMENTATION.
+CLASS ZCL_01_ITAB_PRACTICA IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

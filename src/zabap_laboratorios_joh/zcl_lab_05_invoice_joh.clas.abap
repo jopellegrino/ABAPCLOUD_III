@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_05_invoice_joh IMPLEMENTATION.
+CLASS ZCL_LAB_05_INVOICE_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

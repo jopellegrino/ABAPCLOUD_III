@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_21_itab1_chequeoindex_loop IMPLEMENTATION.
+CLASS ZCL_21_ITAB1_CHEQUEOINDEX_LOOP IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

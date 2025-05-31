@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_02_arithmetic_joh IMPLEMENTATION.
+CLASS ZCL_LAB_02_ARITHMETIC_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

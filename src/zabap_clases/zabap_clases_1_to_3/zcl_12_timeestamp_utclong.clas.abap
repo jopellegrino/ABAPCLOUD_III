@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_12_timeestamp_utclong IMPLEMENTATION.
+CLASS ZCL_12_TIMEESTAMP_UTCLONG IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

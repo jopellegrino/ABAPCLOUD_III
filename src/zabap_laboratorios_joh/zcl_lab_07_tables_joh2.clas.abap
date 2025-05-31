@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_07_tables_joh2 IMPLEMENTATION.
+CLASS ZCL_LAB_07_TABLES_JOH2 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

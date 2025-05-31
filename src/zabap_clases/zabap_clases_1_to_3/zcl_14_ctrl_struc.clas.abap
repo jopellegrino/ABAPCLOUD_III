@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_14_ctrl_struc IMPLEMENTATION.
+CLASS ZCL_14_CTRL_STRUC IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

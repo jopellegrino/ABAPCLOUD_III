@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_17_itab_envivo IMPLEMENTATION.
+CLASS ZCL_17_ITAB_ENVIVO IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

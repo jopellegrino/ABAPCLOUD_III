@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_11_oper_date_y_time IMPLEMENTATION.
+CLASS ZCL_11_OPER_DATE_Y_TIME IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

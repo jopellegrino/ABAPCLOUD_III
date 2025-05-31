@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_09_structure_joh IMPLEMENTATION.
+CLASS ZCL_LAB_09_STRUCTURE_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

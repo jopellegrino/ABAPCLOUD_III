@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_13_texto_04 IMPLEMENTATION.
+CLASS ZCL_13_TEXTO_04 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

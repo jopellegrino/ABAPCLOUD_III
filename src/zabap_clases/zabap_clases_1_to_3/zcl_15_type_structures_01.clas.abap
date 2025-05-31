@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_15_type_structures_01 IMPLEMENTATION.
+CLASS ZCL_15_TYPE_STRUCTURES_01 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

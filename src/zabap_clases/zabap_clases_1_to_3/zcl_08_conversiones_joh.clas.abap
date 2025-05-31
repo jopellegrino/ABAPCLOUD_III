@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_08_conversiones_joh IMPLEMENTATION.
+CLASS ZCL_08_CONVERSIONES_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_10_decl_en_linea_y_forzado IMPLEMENTATION.
+CLASS ZCL_10_DECL_EN_LINEA_Y_FORZADO IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

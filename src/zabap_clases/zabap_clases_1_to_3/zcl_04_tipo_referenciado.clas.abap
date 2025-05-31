@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_04_tipo_referenciado IMPLEMENTATION.
+CLASS ZCL_04_TIPO_REFERENCIADO IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

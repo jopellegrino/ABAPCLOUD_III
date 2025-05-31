@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_23_itab2_del_cle IMPLEMENTATION.
+CLASS ZCL_23_ITAB2_DEL_CLE IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

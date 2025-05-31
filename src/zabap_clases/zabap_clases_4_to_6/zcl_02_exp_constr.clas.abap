@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_02_exp_constr IMPLEMENTATION.
+CLASS ZCL_02_EXP_CONSTR IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -176,5 +176,4 @@ CLASS zcl_02_exp_constr IMPLEMENTATION.
     out->write( data = lt_flight_final name = 'Tabla Final' ).
 
   ENDMETHOD.
-
 ENDCLASS.

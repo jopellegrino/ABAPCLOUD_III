@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_03_datos_complejos IMPLEMENTATION.
+CLASS ZCL_03_DATOS_COMPLEJOS IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

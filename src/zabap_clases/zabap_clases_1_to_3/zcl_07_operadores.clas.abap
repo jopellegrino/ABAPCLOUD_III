@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_07_operadores IMPLEMENTATION.
+CLASS ZCL_07_OPERADORES IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

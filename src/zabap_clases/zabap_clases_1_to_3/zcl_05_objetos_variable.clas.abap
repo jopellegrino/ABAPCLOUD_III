@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_05_objetos_variable IMPLEMENTATION.
+CLASS ZCL_05_OBJETOS_VARIABLE IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

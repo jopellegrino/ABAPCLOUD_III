@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_06_basico_fechas IMPLEMENTATION.
+CLASS ZCL_06_BASICO_FECHAS IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

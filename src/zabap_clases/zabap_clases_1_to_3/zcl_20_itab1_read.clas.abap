@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_20_itab1_read IMPLEMENTATION.
+CLASS ZCL_20_ITAB1_READ IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
