@@ -177,7 +177,6 @@ CLASS ZCL_01_ITAB_PRACTICA IMPLEMENTATION.
 
       out->write( ls_booking_date ).
 
-
     ENDLOOP.
 
 

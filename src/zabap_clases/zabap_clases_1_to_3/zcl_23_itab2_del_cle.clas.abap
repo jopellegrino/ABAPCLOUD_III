@@ -91,7 +91,7 @@ CLASS ZCL_23_ITAB2_DEL_CLE IMPLEMENTATION.
     ENDIF.
 
 
-*    """""""""SETENCIA COLLECT (INSERTA EL CONTENIDO DE UNA STRUC. CON LA MISMA PRIMARY KEY A UNA TABLA) (NO USAR EN TABLAS STANDAR OBSOLETO)(DEBEN TENER PRI CLAVE UNICA Y LLENA EN EL ORDEN DE LA KEY)
+*    """""""""SETENCIA COLLECT (INSERTA EL CONTENIDO DE UNA STRUC. CON LA MISMA PRIMARY KEY A UNA TABLA) (NO USAR EN TABLAS STANDAR OBSOLETO)(DEBEN TENER PRIM. CLAVE UNICA Y LLENA EN EL ORDEN DE LA KEY)
 
     DATA: BEGIN OF ls_seats,                                "ESTRUCUTRA YA CON MEMORIA ASIGNADA
             carrier_id TYPE /dmo/flight-carrier_id,
@@ -126,9 +126,9 @@ CLASS ZCL_23_ITAB2_DEL_CLE IMPLEMENTATION.
     FIELDS *
     INTO TABLE @DATA(lt_airline)
     UP TO 50 ROWS.
-    "EL CAMPO CARRIER_ID SEA IGUAL TANTO EN LA ITAB LT_FLIGHT, COMO EN LA STRUC QUE SE ESTA ITERANDO
+                                                                                                                "EL CAMPO CARRIER_ID SEA IGUAL TANTO EN LA ITAB LT_FLIGHT, COMO EN LA STRUC QUE SE ESTA ITERANDO
     LOOP AT lt_flights INTO DATA(ls_flight_let).
-      "ESTO ME TRAE EL CAMPO TRAVEL_ID DEL REGISTRO EN DONDE AMBAS TABLAS TIENEN EL MISMO CARRIER_ID SI NO COLOCAS -TRAVEL_ID TRAERIA TODO EL REGISTRO
+                                                                                                            "ESTO ME TRAE EL CAMPO TRAVEL_ID DEL REGISTRO EN DONDE AMBAS TABLAS TIENEN EL MISMO CARRIER_ID SI NO COLOCAS -TRAVEL_ID TRAERIA TODO EL REGISTRO
       DATA(lv_flight) = CONV string( LET lv_airline = lt_airline[ carrier_id = ls_flight_let-carrier_id ]-travel_id        "LO QUE VA DESPUES DEL = CORRESPONDE A UN READ TABLE, POR ESO TRAES LA ITAB
                                          lv_carrid = lt_airline[ carrier_id = ls_flight_let-carrier_id ]-carrier_id        "TIENE MILES DE REGISTROS  "DECL UNA VAR DONDE SE GUARDARA TODO Y QUIERO QUE SEA TIPO STRING
 
@@ -138,6 +138,8 @@ CLASS ZCL_23_ITAB2_DEL_CLE IMPLEMENTATION.
                                         lv_bebesita = ls_flight_let-price
 
                                        IN | Travel_id: { lv_airline } / Price: { lv_flight_price } / Price (BEBESITA): { lv_bebesita } / CARRIER_ID: { lv_carrid } | ).
+
+
       out->write( data = lv_flight ).
 
     ENDLOOP.
