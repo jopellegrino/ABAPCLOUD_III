@@ -25,31 +25,60 @@ CLASS zcl_inv_data_gen_joh IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
+    GET TIME STAMP FIELD DATA(lv_timestamp_begin).   "CAPTURA LA HORA DESDE ESE PUNTO (INICIO)
+
     DELETE FROM zdbt_invoice_joh. "MUCHO CUIDADO ELIMINA TODOS LOS REGISTROS DE BBDD
 
-    MODIFY zdbt_invoice_joh FROM TABLE @( VALUE #( ( invoice_id = '1'
-                                                     company_cod = '1010'
-                                                     customer  = 'Coca-Cola'
-                                                     status     = c_pay
-                                                     created_by = cl_abap_context_info=>get_user_technical_name(  ) )
+    DO 100000 TIMES.   "GENERA 10000 FACTURAS, POR INVOICE_ID PARA CADA COMPAÑIA
 
-                                                   ( invoice_id = '2'
-                                                     company_cod = '2020'
-                                                     customer  = 'Pepsi-Cola'
-                                                     status     = c_overdue
-                                                     created_by = cl_abap_context_info=>get_user_technical_name(  ) )
+      MODIFY zdbt_invoice_joh FROM TABLE @( VALUE #( ( invoice_id   = sy-index
+                                                       company_cod  = '1010'
+                                                       customer     = 'Joja-Cola'
+                                                       status       = c_pay
+                                                       created_by   = cl_abap_context_info=>get_user_technical_name(  )
+                                                       amount       = '1000'
+                                                       currency_key = 'USD' )
 
-                                                   ( invoice_id = '3'
-                                                     company_cod = '2030'
-                                                     customer  = 'Mercadona'
-                                                     status     = c_posted
-                                                     created_by = 'CB9999999921' )
 
-                                                   ( invoice_id = '4'
-                                                     company_cod = '5050'
-                                                     customer  = 'GADIS'
-                                                     status     = c_cancelled
-                                                     created_by = 'CB9999999222' )           ) ).
+                                                     ( invoice_id   = sy-index
+                                                       company_cod  = '1020'
+                                                       customer     = 'Consum'
+                                                       status       = c_overdue
+                                                       created_by   = cl_abap_context_info=>get_user_technical_name(  )
+                                                       amount       = '1150'
+                                                       currency_key = 'USD' )
+
+                                                     ( invoice_id   = sy-index
+                                                       company_cod  = '1030'
+                                                       customer     = 'Farmatodo'
+                                                       status       = c_posted
+                                                       created_by   = 'CB999999411'
+                                                       amount       = '1500'
+                                                       currency_key = 'USD' )
+
+                                                     ( invoice_id   = sy-index
+                                                       company_cod  = '1040'
+                                                       customer     = 'Farmacias SAAS'
+                                                       status       = c_cancelled
+                                                       created_by   = 'CB9999994722'
+                                                       amount       = '1250'
+                                                       currency_key = 'USD' )
+
+                                                      ( invoice_id  = sy-index
+                                                       company_cod  = '1050'
+                                                       customer     = 'MercaJoja'
+                                                       status       = c_posted
+                                                       created_by   = 'CB999944442'
+                                                       amount       = '1250'
+                                                       currency_key = 'EUR'  ) ) ).
+    ENDDO.
+
+    GET TIME STAMP FIELD DATA(lv_timestamp_END).    "CAPTURA LA HORA AL FINALIZAR EL BUCLE
+
+    DATA(lv_dif_sec) = cl_abap_tstmp=>subtract(  EXPORTING tstmp1 = lv_timestamp_END
+                                                           tstmp2 = lv_timestamp_begin   ). "DEVUELVE EN SEGUNDOS LA RESTA DE DOS TIMESTAMPS
+
+    out->write( |Total time: { lv_dif_sec } | ).
 
     IF sy-subrc = 0.    "VERIFICA QUE SE HIZO EL MODIFY CORRECTAMENTE
       out->write( |{ sy-dbcnt } Registros afectados| ). "CONTADOR DE REGISTROS AFECTADOS EN BBDD
