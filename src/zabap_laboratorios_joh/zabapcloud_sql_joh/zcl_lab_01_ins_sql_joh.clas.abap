@@ -104,6 +104,21 @@ CLASS zcl_lab_01_ins_sql_joh IMPLEMENTATION.
     ENDIF.
 
 
+    "FORMA DE SOLUCION
+    TRY.
+        INSERT zproducts_joh FROM TABLE @( VALUE #( ( product_id = 2
+        product_name = 'ASUS'
+        category_id = 2
+        quantity = 1
+        price = '200.05' ) ) ).
+        IF sy-subrc EQ 0.
+          out->write( |{ sy-dbcnt } records were added| ).
+        ENDIF.
+      CATCH cx_sy_open_sql_db INTO DATA(lx_error).
+        out->write( lx_error->get_text( ) ).
+        RETURN.
+    ENDTRY.
+
 
   ENDMETHOD.
 ENDCLASS.
