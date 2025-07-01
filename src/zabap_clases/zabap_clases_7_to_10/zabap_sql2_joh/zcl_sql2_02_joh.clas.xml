@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_SQL2_01_JOH</CLSNAME>
+    <CLSNAME>ZCL_SQL2_02_JOH</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Oper. Binarios, Between, LIKE y LIKE-ESCAPE</DESCRIPT>
+    <DESCRIPT>IN e IN TABLA DE RANGOS, NULL, AND-OR-NOT</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
