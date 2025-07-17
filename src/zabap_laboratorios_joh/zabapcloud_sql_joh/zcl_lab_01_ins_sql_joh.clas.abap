@@ -45,13 +45,13 @@ CLASS zcl_lab_01_ins_sql_joh IMPLEMENTATION.
                               product_name = 'Nike One'
                               category_id  = 00000002
                               quantity     = 11
-                              price        = '10.33'  )
+                              price        = '200.33'  )
 
                                ( product_id  = 00000005
                               product_name = 'Pepsi-Cola'
                               category_id  = 00000002
                               quantity     = 3
-                              price        = '34.33'    )
+                              price        = '77.33'    )
 
                              ( product_id  = 00000063
                               product_name = 'Coca-Cola'
@@ -69,7 +69,7 @@ CLASS zcl_lab_01_ins_sql_joh IMPLEMENTATION.
                               product_name = 'SSD Kingston R10'
                               category_id  = 00000330
                               quantity     = 33
-                              price        = '40.33'    )  ) .
+                              price        = '100.33'    )  ) .
 
     INSERT zproducts_joh FROM TABLE @lt_products.
 

@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_6_QUERY_DINAMIC_JOH</CLSNAME>
+    <CLSNAME>ZCL_LAB_07_FILTERSQL_JOH</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>Setencias dinamicas: Filtros</DESCRIPT>
+    <DESCRIPT>Lab. SQL II: Condiciones en los filtros</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>
