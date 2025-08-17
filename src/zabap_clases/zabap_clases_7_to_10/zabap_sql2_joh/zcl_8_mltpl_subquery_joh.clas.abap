@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_8_mltpl_subquery_joh IMPLEMENTATION.
+CLASS ZCL_8_MLTPL_SUBQUERY_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_luw_02_joh IMPLEMENTATION.
+CLASS ZCL_LUW_02_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

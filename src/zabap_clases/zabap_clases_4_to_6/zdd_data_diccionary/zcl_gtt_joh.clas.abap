@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_gtt_joh IMPLEMENTATION.
+CLASS ZCL_GTT_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

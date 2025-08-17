@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_sql_01_joh IMPLEMENTATION.
+CLASS ZCL_SQL_01_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_10_joins_joh IMPLEMENTATION.
+CLASS ZCL_10_JOINS_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

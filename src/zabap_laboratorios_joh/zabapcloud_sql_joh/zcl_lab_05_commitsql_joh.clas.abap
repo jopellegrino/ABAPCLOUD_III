@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_05_commitsql_joh IMPLEMENTATION.
+CLASS ZCL_LAB_05_COMMITSQL_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

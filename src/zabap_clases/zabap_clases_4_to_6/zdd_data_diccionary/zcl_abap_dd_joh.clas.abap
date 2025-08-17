@@ -22,7 +22,10 @@ CLASS zcl_abap_dd_joh DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_abap_dd_joh IMPLEMENTATION.
+
+
+CLASS ZCL_ABAP_DD_JOH IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

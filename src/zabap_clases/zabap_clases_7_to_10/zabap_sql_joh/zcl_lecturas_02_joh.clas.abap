@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lecturas_02_joh IMPLEMENTATION.
+CLASS ZCL_LECTURAS_02_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

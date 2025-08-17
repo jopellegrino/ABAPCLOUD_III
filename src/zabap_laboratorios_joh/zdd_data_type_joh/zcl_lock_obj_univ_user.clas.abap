@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lock_obj_univ_user IMPLEMENTATION.
+CLASS ZCL_LOCK_OBJ_UNIV_USER IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

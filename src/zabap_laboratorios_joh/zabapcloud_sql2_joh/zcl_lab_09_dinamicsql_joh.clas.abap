@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_09_dinamicsql_joh IMPLEMENTATION.
+CLASS ZCL_LAB_09_DINAMICSQL_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

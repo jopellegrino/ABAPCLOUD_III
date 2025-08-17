@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_3_exprns_agrgcn_joh IMPLEMENTATION.
+CLASS ZCL_3_EXPRNS_AGRGCN_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

@@ -21,7 +21,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_inv_data_gen_joh IMPLEMENTATION.
+CLASS ZCL_INV_DATA_GEN_JOH IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 
@@ -85,5 +86,4 @@ CLASS zcl_inv_data_gen_joh IMPLEMENTATION.
     ENDIF.
 
   ENDMETHOD.
-
 ENDCLASS.

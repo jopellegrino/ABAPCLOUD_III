@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_08_sqlexpressions_joh IMPLEMENTATION.
+CLASS ZCL_LAB_08_SQLEXPRESSIONS_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

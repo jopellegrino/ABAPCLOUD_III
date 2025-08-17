@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_7_query_dinamic_joh IMPLEMENTATION.
+CLASS ZCL_7_QUERY_DINAMIC_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

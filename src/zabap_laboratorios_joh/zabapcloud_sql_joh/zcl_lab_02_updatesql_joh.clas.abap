@@ -10,7 +10,10 @@ CLASS zcl_lab_02_updatesql_joh DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_02_updatesql_joh IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_02_UPDATESQL_JOH IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

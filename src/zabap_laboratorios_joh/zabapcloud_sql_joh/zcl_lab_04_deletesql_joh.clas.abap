@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_04_deletesql_joh IMPLEMENTATION.
+CLASS ZCL_LAB_04_DELETESQL_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

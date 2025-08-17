@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_dynamic_cache_joh IMPLEMENTATION.
+CLASS ZCL_DYNAMIC_CACHE_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

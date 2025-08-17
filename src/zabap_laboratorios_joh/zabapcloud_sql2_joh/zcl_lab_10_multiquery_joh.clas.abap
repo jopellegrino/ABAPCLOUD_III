@@ -8,7 +8,10 @@ CLASS zcl_lab_10_multiquery_joh DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_10_multiquery_joh IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_10_MULTIQUERY_JOH IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

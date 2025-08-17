@@ -10,7 +10,10 @@ CLASS zcl_lab_07_filtersql_joh DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_lab_07_filtersql_joh IMPLEMENTATION.
+
+
+CLASS ZCL_LAB_07_FILTERSQL_JOH IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

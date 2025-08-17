@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_1_cond_filtros_joh IMPLEMENTATION.
+CLASS ZCL_1_COND_FILTROS_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

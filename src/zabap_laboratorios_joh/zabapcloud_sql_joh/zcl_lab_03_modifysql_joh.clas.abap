@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_03_modifysql_joh IMPLEMENTATION.
+CLASS ZCL_LAB_03_MODIFYSQL_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

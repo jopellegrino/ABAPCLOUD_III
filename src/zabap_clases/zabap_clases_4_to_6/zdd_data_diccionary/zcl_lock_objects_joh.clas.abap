@@ -19,7 +19,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lock_objects_joh IMPLEMENTATION.
+CLASS ZCL_LOCK_OBJECTS_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

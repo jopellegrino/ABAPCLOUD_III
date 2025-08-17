@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_lab_06_selectsql_joh IMPLEMENTATION.
+CLASS ZCL_LAB_06_SELECTSQL_JOH IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
